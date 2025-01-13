@@ -15,6 +15,9 @@ int main() {
   float area; // em km²
   float pib;
   int qtd_pontos_turisticos;
+  float densidade_populacional;
+  float pib_per_capita;
+  
 
   // Capturar informação de estado
   printf("-----------  CADASTRO DE CARTA  -----------\n\n");
@@ -39,11 +42,18 @@ int main() {
   printf("Informe a quantidade de pontos turísticos de %s: ", cidade);
   scanf("%d", &qtd_pontos_turisticos);
 
-// Exibição dos Dados das Cartas
+  // Calcular automáticamente as propriedades de Densidade Populacional e PIB per Capita
+  densidade_populacional = (float) populacao / area;
+  pib_per_capita = (float) pib / populacao;
+
+
+  // Exibição dos Dados das Cartas
 
   printf("\n\n-------  DADOS DA CARTA CADASTRADA  -------\n\n");
   printf("CÓDIGO DA CARTA: %s\nCIDADE: %s\nESTADO: %s\n", codigo_carta, cidade, estado);
   printf("POPULAÇÃO: %d\nÁREA: %.2f\nPIB: %.2f\nQUANTIDADE DE PONTOS TURÍSTICOS: %d\n", populacao, area, pib, qtd_pontos_turisticos);
+  printf("DENSIDADE POPULACIONAL: %.2f\nPIB PER CAPITA: %.2f\n", densidade_populacional, pib_per_capita);
+
 
   
   return 0;
